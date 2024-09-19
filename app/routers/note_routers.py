@@ -1,10 +1,10 @@
 from typing import List
-from fastapi import APIRouter, Depends, HTTPException, status, Body
+from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from app.auth.auth import get_current_user
 from app.db.base import get_async_session
 from app.models.user_model import User
-from app.schemas.note_schema import NotesBase, NotesSchema
+from app.schemas.note_schema import NotesBase
 from app.crud.note_crud import create_note, get_all_user_notes, select_notes_by_title
 
 note_router = APIRouter()

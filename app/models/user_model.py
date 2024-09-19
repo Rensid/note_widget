@@ -1,8 +1,6 @@
 from sqlalchemy import Column, String, Integer
 from sqlalchemy.orm import relationship
-from app.db.base import Base, get_async_session
-from sqlalchemy.ext.asyncio import AsyncSession
-from fastapi import Depends
+from app.db.base import Base
 
 
 class User(Base):

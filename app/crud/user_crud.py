@@ -3,7 +3,7 @@ from app.auth.jwt import get_password_hash
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from app.models.user_model import User
-from app.schemas.user_schema import UserSchema, UserPasswordSchema
+from app.schemas.user_schema import UserPasswordSchema
 
 
 async def check_user_by_username(session: AsyncSession, username: str) -> User:
@@ -29,5 +29,3 @@ async def create_new_user(session: AsyncSession, user: UserPasswordSchema) -> Us
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, detail="username already registered"
         )
-
-# async def delete_user(session: AsyncSession, user_id: )

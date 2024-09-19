@@ -1,11 +1,10 @@
-
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from app.auth.auth import authenticate_user, get_current_user
 from app.auth.jwt import get_new_tokens
 from app.db.base import get_async_session
-from app.crud.user_crud import create_new_user, check_user_by_username
+from app.crud.user_crud import create_new_user
 from app.models.user_model import User
 from app.schemas.user_schema import Token, UserPasswordSchema
 
